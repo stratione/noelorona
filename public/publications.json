@@ -1,0 +1,86 @@
+{
+  "source": "Google Scholar",
+  "source_url": "https://scholar.google.com/citations?user=Af07_G0AAAAJ&hl=en&oi=ao",
+  "publications": [
+    {
+      "title": "Strategies Employed by Project Managers when Adopting Agile DevSecOps to Manage Software Development in the DoD",
+      "category": "DevSecOps, Platform Engineering, and Defense Software",
+      "summary": "",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:u-x6o8ySG0sC",
+      "pdf_url": "/publications/Strategies_Employed_By_Project_Managers.pdf",
+      "external_url": "https://www.academia.edu/108901123/Strategies_Employed_By_Project_Managers_When_Adopting_Agile_DevSecOps_To_Manage_Software_Development_In_The_DoD"
+    },
+    {
+      "title": "The Ever-Rising Horizon: A Modern Take on the Dunning-Kruger Curve for T-Shaped Engineers",
+      "category": "Platform Leadership and Engineering Practice",
+      "summary": "",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:W7OEmFMy1HYC",
+      "pdf_url": null,
+      "external_url": "https://medium.com/brewops/the-ever-rising-horizon-a-modern-take-on-the-dunning-kruger-curve-for-t-shaped-engineers-21f4039878c3"
+    },
+    {
+      "title": "Lean Platform Engineering",
+      "category": "DevSecOps, Platform Engineering, and Defense Software",
+      "summary": "",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:YsMSGLbcyi4C",
+      "pdf_url": null,
+      "external_url": "https://medium.com/brewops/lean-platform-engineering-b87a147fc56f"
+    },
+    {
+      "title": "Tips and Techniques for Accelerating Your Writing",
+      "category": "Writing and Scholarly Practice",
+      "summary": "",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:zYLM7Y9cAGgC",
+      "pdf_url": "https://media.defense.gov/2025/Apr/04/2003683084/-1/-1/1/250404-A-IO061-0001.pdf#page=41",
+      "external_url": null
+    },
+    {
+      "title": "Call to Action: There Has To Be a Better Way",
+      "category": "Platform Leadership and Engineering Practice",
+      "summary": "",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:qjMakFHDy7sC",
+      "pdf_url": null,
+      "external_url": null
+    },
+    {
+      "title": "Agile and Anti-Agile in Signal Operations",
+      "category": "DevSecOps, Platform Engineering, and Defense Software",
+      "summary": "",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:UeHWp8X0CEIC",
+      "pdf_url": null,
+      "external_url": null
+    },
+    {
+      "title": "Exploring Enabling Technologies in Military Agile Development",
+      "category": "DevSecOps, Platform Engineering, and Defense Software",
+      "summary": "",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:2osOgNQ5qMEC",
+      "pdf_url": null,
+      "external_url": null
+    },
+    {
+      "title": "A Journey in Military Academia: Breaking Down Barriers to Writing",
+      "category": "Writing and Scholarly Practice",
+      "summary": "",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:9yKSN-GCB0IC",
+      "pdf_url": "https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_71979.pdf#page=9",
+      "external_url": null
+    },
+    {
+      "title": "The power of FOSS",
+      "category": "DevSecOps, Platform Engineering, and Defense Software",
+      "summary": "",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:d1gkVwhDpl0C",
+      "pdf_url": null,
+      "external_url": "https://asc.army.mil/web/news-the-power-of-foss/"
+    },
+    {
+      "title": "The Lean Startup Explained",
+      "category": "Platform Leadership and Engineering Practice",
+      "summary": "",
+      "link": "https://medium.com/@noelorona/the-lean-startup-explained-c0cbc5b87d71",
+      "external_url": "https://medium.com/@noelorona/the-lean-startup-explained-c0cbc5b87d71",
+      "pdf_url": null
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+@import "@fontsource/source-sans-3/latin.css";
+@import "@fontsource/source-serif-4/latin.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Source Sans 3", "Helvetica Neue", sans-serif;
+  background-color: #0b0f14;
+  background-image:
+    radial-gradient(circle at top, rgba(201, 162, 39, 0.18), transparent 55%),
+    radial-gradient(circle at 70% 20%, rgba(18, 26, 35, 0.8), transparent 55%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(230, 237, 243, 0.04) 0,
+      rgba(230, 237, 243, 0.04) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+  color: #e6edf3;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Source Serif 4", "Georgia", serif;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  padding: 0.5rem 0.75rem;
+  background: #c9a227;
+  color: #0b0f14;
+  border-radius: 999px;
+  z-index: 50;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+::selection {
+  background: #c9a227;
+  color: #0b0f14;
+}
+
+.soft-portrait {
+  -webkit-mask-image: radial-gradient(circle at center, #000 55%, transparent 75%);
+  mask-image: radial-gradient(circle at center, #000 55%, transparent 75%);
+}

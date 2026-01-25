@@ -1,0 +1,93 @@
+export type Publication = {
+  title: string;
+  category: string;
+  summary: string;
+  link: string;
+  externalUrl?: string | null;
+  pdfUrl?: string | null;
+};
+
+// Add externalUrl for a direct publication page, and pdfUrl for a public PDF under /public/publications.
+
+export const publications: Publication[] = [
+  {
+    title: 'Strategies Employed by Project Managers when Adopting Agile DevSecOps to Manage Software Development in the DoD',
+    category: 'DevSecOps, Platform Engineering, and Defense Software',
+    summary: "",
+    link: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:u-x6o8ySG0sC',
+    externalUrl: 'https://www.academia.edu/108901123/Strategies_Employed_By_Project_Managers_When_Adopting_Agile_DevSecOps_To_Manage_Software_Development_In_The_DoD',
+    pdfUrl: '/publications/Strategies_Employed_By_Project_Managers.pdf'
+  },
+  {
+    title: 'The Ever-Rising Horizon: A Modern Take on the Dunning-Kruger Curve for T-Shaped Engineers',
+    category: 'Platform Leadership and Engineering Practice',
+    summary: "",
+    link: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:W7OEmFMy1HYC',
+    externalUrl: 'https://medium.com/brewops/the-ever-rising-horizon-a-modern-take-on-the-dunning-kruger-curve-for-t-shaped-engineers-21f4039878c3',
+    pdfUrl: null
+  },
+  {
+    title: 'Lean Platform Engineering',
+    category: 'DevSecOps, Platform Engineering, and Defense Software',
+    summary: "",
+    link: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:YsMSGLbcyi4C',
+    externalUrl: 'https://medium.com/brewops/lean-platform-engineering-b87a147fc56f',
+    pdfUrl: null
+  },
+  {
+    title: 'Tips and Techniques for Accelerating Your Writing',
+    category: 'Writing and Scholarly Practice',
+    summary: "",
+    link: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:zYLM7Y9cAGgC',
+    externalUrl: null,
+    pdfUrl: 'https://media.defense.gov/2025/Apr/04/2003683084/-1/-1/1/250404-A-IO061-0001.pdf#page=41'
+  },
+  {
+    title: 'The Lean Startup Explained',
+    category: 'Platform Leadership and Engineering Practice',
+    summary: "",
+    link: 'https://medium.com/@noelorona/the-lean-startup-explained-c0cbc5b87d71',
+    externalUrl: 'https://medium.com/@noelorona/the-lean-startup-explained-c0cbc5b87d71',
+    pdfUrl: null
+  },
+  {
+    title: 'Call to Action: There Has To Be a Better Way',
+    category: 'Platform Leadership and Engineering Practice',
+    summary: "",
+    link: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:qjMakFHDy7sC',
+    externalUrl: null,
+    pdfUrl: null
+  },
+  {
+    title: 'Agile and Anti-Agile in Signal Operations',
+    category: 'DevSecOps, Platform Engineering, and Defense Software',
+    summary: "",
+    link: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:UeHWp8X0CEIC',
+    externalUrl: null,
+    pdfUrl: null
+  },
+  {
+    title: 'Exploring Enabling Technologies in Military Agile Development',
+    category: 'DevSecOps, Platform Engineering, and Defense Software',
+    summary: "",
+    link: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:2osOgNQ5qMEC',
+    externalUrl: null,
+    pdfUrl: null
+  },
+  {
+    title: 'A Journey in Military Academia: Breaking Down Barriers to Writing',
+    category: 'Writing and Scholarly Practice',
+    summary: "",
+    link: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:9yKSN-GCB0IC',
+    externalUrl: null,
+    pdfUrl: 'https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_71979.pdf#page=9'
+  },
+  {
+    title: 'The power of FOSS',
+    category: 'DevSecOps, Platform Engineering, and Defense Software',
+    summary: "",
+    link: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Af07_G0AAAAJ&citation_for_view=Af07_G0AAAAJ:d1gkVwhDpl0C',
+    externalUrl: 'https://asc.army.mil/web/news-the-power-of-foss/',
+    pdfUrl: null
+  },
+];

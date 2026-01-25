@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../components/Section.astro";
+import { SITE } from "../consts";
+import { profile } from "../data/profile";
+
+const siteUrl = Astro.site ?? new URL(SITE.siteUrl);
+const pitch =
+  "Advancing technology management through platform engineering, DevSecOps, and applied computing education to connect research, practice, and teaching for secure, scalable delivery.";
+const highlightSkills = [
+  "Technology management and platform strategy",
+  "Secure delivery and operational excellence"
+];
+
+const credentialEntries = profile.education.map((item, index) => {
+  const hasInstitution = !item.institution.toLowerCase().includes("available upon request");
+  return {
+    "@type": "EducationalOccupationalCredential",
+    "@id": `#degree-${index + 1}`,
+    name: item.degree,
+    credentialCategory: "Degree",
+    recognizedBy: hasInstitution
+      ? { "@type": "Organization", name: item.institution }
+      : undefined
+  };
+});
+
+const certificationEntries = profile.certifications.map((name, index) => ({
+  "@type": "EducationalOccupationalCredential",
+  "@id": `#cert-${index + 1}`,
+  name,
+  credentialCategory: "Professional Certification"
+}));
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "#person",
+      name: profile.name,
+      jobTitle: profile.title,
+      description: profile.summary,
+      url: siteUrl.href,
+      sameAs: [profile.publications.scholarUrl],
+      hasCredential: [
+        ...credentialEntries.map((entry) => ({ "@id": entry["@id"] })),
+        ...certificationEntries.map((entry) => ({ "@id": entry["@id"] }))
+      ]
+    },
+    ...credentialEntries,
+    ...certificationEntries
+  ]
+};
+---
+<BaseLayout
+  title="Portfolio"
+  description="Scholar-practitioner portfolio for Dr. Noe Lorona with expertise in platform engineering, DevSecOps, data platforms, and computing education."
+  structuredData={structuredData}
+>
+  <section id="hero" class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+    <div class="space-y-4 animate-fade-up">
+      <p class="text-lg text-marigold">{profile.title}</p>
+      <p class="text-lg text-slate">{pitch}</p>
+      <div class="flex flex-wrap gap-3">
+        <a
+          class="rounded-full bg-marigold px-4 py-2 text-sm font-semibold text-parchment shadow-soft"
+          href="/publications"
+        >
+          Publications
+        </a>
+        <a
+          class="rounded-full border border-slate/30 px-4 py-2 text-sm text-slate hover:border-marigold/60 hover:text-ink"
+          href="/contact"
+        >
+          Contact
+        </a>
+      </div>
+    </div>
+    <aside class="rounded-3xl border border-slate/10 bg-haze/80 p-6 shadow-soft animate-fade-up">
+      <div class="flex justify-end">
+        <img
+          src="/images/headshot.jpg"
+          alt="Portrait of Dr. Noe Lorona"
+          width="88"
+          height="88"
+          class="soft-portrait h-20 w-20 rounded-full object-cover opacity-90 ring-1 ring-marigold/60"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+      <h2 class="mt-4 text-xl font-semibold text-ink">Quick strengths</h2>
+      <ul class="mt-4 space-y-2 text-sm text-slate">
+        {highlightSkills.map((skill) => (
+          <li>{skill}</li>
+        ))}
+      </ul>
+      <p class="mt-4 text-xs text-slate">
+        Learn more about the scholarship on the Publications page.
+      </p>
+    </aside>
+  </section>
+
+  <section id="about" class="scroll-mt-24 py-10">
+    <div class="grid gap-4 md:grid-cols-2">
+      <article id="expertise" class="rounded-2xl border border-slate/10 bg-haze/80 p-6">
+        <h3 class="text-lg font-semibold text-ink">Expertise</h3>
+        <p class="mt-2 text-sm text-slate">
+          Focused on platform engineering, DevSecOps, and data platforms that support
+          secure delivery and measurable outcomes.
+        </p>
+        <p class="mt-3 text-sm text-slate">
+          Applied teaching bridges systems practice with learner readiness.
+        </p>
+      </article>
+
+      <article id="credibility" class="rounded-2xl border border-slate/10 bg-haze/80 p-6">
+        <h3 class="text-lg font-semibold text-ink">Scholarship</h3>
+        <p class="mt-2 text-sm text-slate">
+          Doctoral research explores technology management and the human systems that
+          enable secure, resilient platforms.
+        </p>
+        <a class="mt-4 inline-flex text-sm font-semibold text-marigold" href="/publications">
+          See publications
+        </a>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

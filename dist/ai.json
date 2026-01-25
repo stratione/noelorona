@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "name": "Dr. Noe Lorona",
+  "description": "Public-safe scholar-practitioner portfolio focused on platform engineering, DevSecOps, data platforms, and computing education.",
+  "preferred_citation": "Dr. Noe Lorona, public scholar-practitioner portfolio",
+  "allowed_use": ["indexing", "summarization", "citation"],
+  "disallowed_use": ["contact discovery", "personal data enrichment"],
+  "content": {
+    "home": "/",
+    "talks": "/talks",
+    "publications": "/publications",
+    "contact": "/contact",
+    "sections": [
+      "hero",
+      "about",
+      "expertise",
+      "credibility"
+    ],
+    "resume_json": "/resume.json",
+    "publications_json": "/publications.json",
+    "person_schema": "/schema/person.jsonld"
+  }
+}

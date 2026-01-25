@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Noe Lorona",
+  "label": "Scholar-Practitioner in Information Systems & Computing Education",
+  "summary": "Scholar-practitioner focused on platform engineering, platform product management, DevSecOps, data platforms, and applied computing education.",
+  "education": [
+    {
+      "degree": "Doctor of Management in Information Systems",
+      "institution": "Institution name available upon request"
+    },
+    {
+      "degree": "Master's in IT Management",
+      "institution": "Institution name available upon request"
+    },
+    {
+      "degree": "Bachelor's in Information Technology",
+      "institution": "Institution name available upon request"
+    },
+    {
+      "degree": "Associate's in Database Administration",
+      "institution": "Institution name available upon request"
+    }
+  ],
+  "certifications": [
+    "Agile leadership and UX credentials",
+    "Lean Six Sigma Green Belt",
+    "CompTIA Security+",
+    "CompTIA CySA+",
+    "CompTIA Network+",
+    "CompTIA A+",
+    "CompTIA PenTest+",
+    "CompTIA Project+"
+  ],
+  "expertise": [
+    "Platform engineering and DevSecOps",
+    "Platform product management",
+    "Data platforms and analytics",
+    "Agile and lean delivery",
+    "Computing and information systems education"
+  ],
+  "links": [
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?user=Af07_G0AAAAJ&hl=en&oi=ao"
+    }
+  ]
+}

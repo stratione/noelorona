@@ -1,0 +1,64 @@
+---
+import "../styles/global.css";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import { SITE } from "../consts";
+
+const { title, description, structuredData } = Astro.props;
+const pageTitle = title ? `${title} | ${SITE.title}` : SITE.title;
+const metaDescription = description ?? SITE.description;
+const siteUrl = Astro.site ?? new URL(SITE.siteUrl);
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={metaDescription} />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href={canonicalUrl.href} />
+
+    <link rel="alternate" type="application/json" href="/ai.json" />
+
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl.href} />
+
+    <meta name="twitter:card" content="summary" />
+
+    <!-- GA4 placeholder: replace G-XXXXXXX with your measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXX');
+
+      // Google Ads placeholder: replace AW-XXXXXXX with your conversion ID.
+      // gtag('config', 'AW-XXXXXXX');
+      // Google Ads conversion event placeholder:
+      // gtag('event', 'conversion', { 'send_to': 'AW-XXXXXXX/CONVERSION_LABEL' });
+    </script>
+
+    {structuredData && (
+      <script type="application/ld+json" is:inline>
+        {JSON.stringify(structuredData)}
+      </script>
+    )}
+  </head>
+  <body class="text-ink">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="relative overflow-hidden">
+      <div class="pointer-events-none absolute -top-32 right-10 h-48 w-48 rounded-full bg-marigold/15 blur-3xl"></div>
+      <div class="pointer-events-none absolute top-1/3 -left-16 h-64 w-64 rounded-full bg-slate/15 blur-3xl"></div>
+      <SiteHeader currentPath={Astro.url.pathname} />
+      <main id="main-content" class="mx-auto w-full max-w-5xl px-6 pb-16 pt-10">
+        <slot />
+      </main>
+      <SiteFooter />
+    </div>
+  </body>
+</html>
