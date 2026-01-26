@@ -20,6 +20,9 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href={canonicalUrl.href} />
 
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="apple-touch-icon" href="/images/logo.png" />
+
     <link rel="alternate" type="application/json" href="/ai.json" />
 
     <meta property="og:title" content={pageTitle} />

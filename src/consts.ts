@@ -7,12 +7,8 @@ export const SITE = {
 
 export const NAV_LINKS = [
   {
-    label: "About",
-    href: "#about",
-    children: [
-      { label: "Areas of Expertise", href: "#expertise" },
-      { label: "Credibility", href: "#credibility" }
-    ]
+    label: "Home",
+    href: "/"
   },
   { href: "/talks", label: "Talks" },
   { href: "/publications", label: "Publications" },
