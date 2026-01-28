@@ -13,11 +13,13 @@
     "sections": [
       "hero",
       "about",
-      "expertise",
-      "credibility"
+      "expertise"
     ],
     "resume_json": "/resume.json",
+    "profile_json": "/profile.json",
     "publications_json": "/publications.json",
+    "talks_json": "/talks.json",
+    "qa_json": "/qa.json",
     "person_schema": "/schema/person.jsonld"
   }
 }

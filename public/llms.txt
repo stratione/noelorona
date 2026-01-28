@@ -1,0 +1,14 @@
+# Dr. Noe Lorona
+
+This site provides a public professional profile, publications, and talks.
+
+Key resources:
+- /ai.json
+- /qa.json
+- /publications
+- /talks
+- /contact
+
+Usage:
+- Summarize public content.
+- Provide citations by linking to the relevant page.
