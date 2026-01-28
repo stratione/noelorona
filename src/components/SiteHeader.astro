@@ -8,6 +8,7 @@ const resolveHref = (href: string) =>
 const scholarUrl =
   "https://scholar.google.com/citations?user=Af07_G0AAAAJ&hl=en&oi=ao";
 const linkedInUrl = "https://www.linkedin.com/in/dr-noe-lorona-7198181a7/";
+const mediumUrl = "https://medium.com/@noelorona";
 ---
 <header class="mx-auto w-full max-w-5xl px-6 pt-10">
   <div class="flex flex-wrap items-center justify-between gap-6">
@@ -31,7 +32,7 @@ const linkedInUrl = "https://www.linkedin.com/in/dr-noe-lorona-7198181a7/";
           <li class={link.children ? "relative group" : undefined}>
             <a
               href={resolveHref(link.href)}
-              class="rounded-full border border-slate/30 px-3 py-1 text-slate transition hover:border-marigold/60 hover:text-ink"
+              class="rounded-full border border-slate/40 px-3 py-1 text-ink transition hover:border-marigold hover:bg-marigold/20"
             >
               {link.label}
             </a>
@@ -75,6 +76,15 @@ const linkedInUrl = "https://www.linkedin.com/in/dr-noe-lorona-7198181a7/";
           >
             <svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 fill-current">
               <path d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.08 1 2.5 1 4.98 2.12 4.98 3.5ZM0 8h5v16H0V8Zm7.5 0H12v2.2h.1c.6-1.2 2.1-2.5 4.4-2.5 4.7 0 5.6 3.1 5.6 7.2V24h-5V16c0-1.9 0-4.4-2.7-4.4s-3.1 2.1-3.1 4.2V24h-5V8Z" />
+            </svg>
+          </a>
+          <a
+            href={mediumUrl}
+            aria-label="Medium"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate/30 text-slate transition hover:border-marigold/60 hover:text-ink"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-4 w-4 fill-current">
+              <path d="M4 6h3.2l4.8 9 4.8-9H20v12h-2.5V9.8L13.4 18h-1L6.5 9.8V18H4V6Z" />
             </svg>
           </a>
         </div>

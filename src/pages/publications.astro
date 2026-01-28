@@ -41,64 +41,98 @@ const timeline = publications;
 
     <div class="space-y-6">
       <section class="rounded-2xl border border-slate/10 bg-haze/80 p-6">
-        <div class="mt-4 space-y-6">
+        <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {timeline.map((publication) => (
-            <article class="rounded-xl border border-slate/20 p-4">
-              <h4 class="text-base font-semibold text-ink">{publication.title}</h4>
-              {publication.externalUrl && (
-                <details class="mt-3 rounded-lg border border-slate/20 bg-parchment/5 p-3">
-                  <summary class="inline-flex cursor-pointer items-center rounded-full border border-slate/30 px-3 py-1 text-sm font-semibold text-marigold transition hover:border-marigold/60 whitespace-nowrap">
-                    Go to episode
-                  </summary>
-                  <div class="mt-3 space-y-2">
-                    <a class="text-sm text-slate underline" href={publication.externalUrl}>
-                      {publication.externalUrl}
-                    </a>
-                    <iframe
-                      class="h-64 w-full rounded-lg border border-slate/20"
-                      src={publication.externalUrl}
-                      title={`${publication.title} source`}
-                      loading="lazy"
-                    ></iframe>
-                    <p class="text-xs text-slate">
-                      If the embed is blocked, open the link in a new tab.
-                    </p>
-                  </div>
-                </details>
-              )}
-              {publication.summary && (
-                <p class="mt-2 text-sm text-slate">{publication.summary}</p>
-              )}
-              {publication.pdfUrl ? (
-                <div class="mt-4 flex flex-wrap items-start gap-3 text-sm">
-                  <details class="rounded-lg border border-slate/20 bg-parchment/5 px-3 py-2">
-                    <summary class="inline-flex cursor-pointer items-center rounded-full border border-slate/30 px-3 py-1 font-semibold text-marigold transition hover:border-marigold/60 whitespace-nowrap">
-                      Go to publication
-                    </summary>
-                    <div class="mt-3">
-                      <object
-                        data={publication.pdfUrl}
-                        type="application/pdf"
-                        class="h-64 w-full rounded-lg border border-slate/20"
-                      >
-                        <p class="text-sm text-slate">
-                          PDF preview unavailable.
-                          <a class="text-marigold" href={publication.pdfUrl}>
-                            Open PDF
+            <article class="flex h-full flex-col rounded-xl border border-slate/20 p-4">
+              <h4 class="text-sm leading-snug">
+                <span class="font-bold text-marigold">{publication.title}</span>
+                <span class="text-slate">
+                  {" "}
+                  — {publication.summary || `${publication.category}.`}
+                </span>
+              </h4>
+              {(publication.externalUrl || publication.pdfUrl) && (
+                <div class="mt-3 flex flex-wrap items-start gap-2 text-sm">
+                  {(() => {
+                    const isDissertation =
+                      publication.title ===
+                      'Strategies Employed by Project Managers when Adopting Agile DevSecOps to Manage Software Development in the DoD';
+                    const isMediumArticle =
+                      publication.title ===
+                        'The Ever-Rising Horizon: A Modern Take on the Dunning-Kruger Curve for T-Shaped Engineers' ||
+                      publication.title === 'Lean Platform Engineering' ||
+                      publication.title === 'The Lean Startup Explained';
+                    const isWritingArticle =
+                      publication.title ===
+                      'Tips and Techniques for Accelerating Your Writing';
+                    const isLineOfDeparture =
+                      publication.title === 'Call to Action: There Has To Be a Better Way';
+                    const isSignalOpsArticle =
+                      publication.title === 'Agile and Anti-Agile in Signal Operations';
+                    const isMilitaryAcademiaArticle =
+                      publication.title ===
+                      'A Journey in Military Academia: Breaking Down Barriers to Writing';
+                    const isExploringArticle =
+                      publication.title ===
+                      'Exploring Enabling Technologies in Military Agile Development';
+                    const isFossArticle =
+                      publication.title === 'The power of FOSS';
+                    const externalLabel = isDissertation
+                      ? 'Go to academia.edu'
+                      : isMediumArticle
+                        ? 'medium.com'
+                        : isWritingArticle
+                          ? 'Go to article'
+                          : isLineOfDeparture
+                            ? 'Go to lineofdeparture.army.mil'
+                            : isSignalOpsArticle
+                              ? 'Go to article'
+                              : isMilitaryAcademiaArticle
+                                ? 'Go to article'
+                                : isExploringArticle
+                                  ? 'Go to article'
+                                  : isFossArticle
+                                    ? 'Go to article'
+                                  : 'Go to publication';
+                    const downloadLabel = isDissertation
+                      ? 'Download dissertation'
+                      : isWritingArticle
+                        ? 'Download article'
+                        : isLineOfDeparture
+                          ? 'Download article'
+                        : isSignalOpsArticle
+                          ? 'Download article'
+                          : isMilitaryAcademiaArticle
+                            ? 'Download article'
+                            : isExploringArticle
+                              ? 'Download article'
+                              : isFossArticle
+                                ? 'Download article'
+                              : 'Download publication';
+                    return (
+                      <>
+                        {publication.externalUrl && (
+                          <a
+                            class="inline-flex items-center rounded-full border border-slate/30 px-3 py-1 font-semibold text-ink transition hover:border-marigold hover:bg-marigold/20 hover:text-ink/95"
+                            href={publication.externalUrl}
+                          >
+                            {externalLabel}
                           </a>
-                        </p>
-                      </object>
-                    </div>
-                  </details>
-                  <a
-                    class="inline-flex items-center rounded-full border border-slate/30 px-3 py-1 font-semibold text-marigold transition hover:border-marigold/60"
-                    href={publication.pdfUrl}
-                    download
-                  >
-                    Download publication
-                  </a>
+                        )}
+                        {publication.pdfUrl && (
+                          <a
+                            class="inline-flex items-center rounded-full border border-slate/30 px-3 py-1 font-semibold text-ink transition hover:border-marigold hover:bg-marigold/20 hover:text-ink/95"
+                            href={publication.pdfUrl}
+                            download
+                          >
+                            {downloadLabel}
+                          </a>
+                        )}
+                      </>
+                    );
+                  })()}
                 </div>
-              ) : null}
+              )}
             </article>
           ))}
         </div>

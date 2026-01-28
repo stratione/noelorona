@@ -6,10 +6,32 @@ import { profile } from "../data/profile";
 
 const siteUrl = Astro.site ?? new URL(SITE.siteUrl);
 const pitch =
-  "Advancing technology management through platform engineering, DevSecOps, and applied computing education to connect research, practice, and teaching for secure, scalable delivery.";
+  "Advancing technology management through platform engineering, DevSecOps, and applied computing education to connect research, practice, and teaching for secure, scalable delivery, informed by doctoral research on Agile DevSecOps adoption in DoD software programs.";
 const highlightSkills = [
-  "Technology management and platform strategy",
-  "Secure delivery and operational excellence"
+  "Platform / Product",
+  "Professor",
+  "DevOps Advocate",
+  "Políglota"
+];
+const expertiseCloud = [
+  { label: "DevOps", className: "text-2xl" },
+  { label: "CI/CD", className: "text-2xl" },
+  { label: "Software Delivery", className: "text-2xl" },
+  { label: "Platform", className: "text-xl" },
+  { label: "Developer Experience", className: "text-xl" },
+  { label: "Agile", className: "text-xl" },
+  { label: "Lean", className: "text-xl" },
+  { label: "Reliability", className: "text-lg" },
+  { label: "Security", className: "text-lg" },
+  { label: "Automation", className: "text-lg" },
+  { label: "Governance", className: "text-lg" },
+  { label: "Analytics", className: "text-lg" },
+  { label: "Data", className: "text-lg" },
+  { label: "Product", className: "text-base" },
+  { label: "Strategy", className: "text-base" },
+  { label: "Systems", className: "text-base" },
+  { label: "Instruction", className: "text-base" },
+  { label: "Curriculum", className: "text-base" }
 ];
 
 const credentialEntries = profile.education.map((item, index) => {
@@ -64,13 +86,19 @@ const structuredData = {
       <p class="text-lg text-slate">{pitch}</p>
       <div class="flex flex-wrap gap-3">
         <a
-          class="rounded-full bg-marigold px-4 py-2 text-sm font-semibold text-parchment shadow-soft"
+          class="rounded-full bg-marigold px-4 py-2 text-sm font-semibold text-parchment shadow-soft animate-soft-bounce"
+          href="/talks"
+        >
+          Talks
+        </a>
+        <a
+          class="rounded-full bg-marigold px-4 py-2 text-sm font-semibold text-parchment shadow-soft animate-soft-bounce"
           href="/publications"
         >
           Publications
         </a>
         <a
-          class="rounded-full border border-slate/30 px-4 py-2 text-sm text-slate hover:border-marigold/60 hover:text-ink"
+          class="rounded-full bg-marigold px-4 py-2 text-sm font-semibold text-parchment shadow-soft animate-soft-bounce"
           href="/contact"
         >
           Contact
@@ -78,51 +106,41 @@ const structuredData = {
       </div>
     </div>
     <aside class="rounded-3xl border border-slate/10 bg-haze/80 p-6 shadow-soft animate-fade-up">
-      <div class="flex justify-end">
+      <div class="flex justify-center">
         <img
           src="/images/headshot.jpg"
           alt="Portrait of Dr. Noe Lorona"
-          width="88"
-          height="88"
-          class="soft-portrait h-20 w-20 rounded-full object-cover opacity-90 ring-1 ring-marigold/60"
+          width="100"
+          height="100"
+          class="soft-portrait h-30 w-30 rounded-full object-cover opacity-90 ring-1 ring-marigold/60"
           loading="eager"
           decoding="async"
         />
       </div>
-      <h2 class="mt-4 text-xl font-semibold text-ink">Quick strengths</h2>
-      <ul class="mt-4 space-y-2 text-sm text-slate">
-        {highlightSkills.map((skill) => (
-          <li>{skill}</li>
-        ))}
-      </ul>
-      <p class="mt-4 text-xs text-slate">
-        Learn more about the scholarship on the Publications page.
-      </p>
+      <p class="mt-4 text-sm text-slate">{highlightSkills.join(" - ")}</p>
     </aside>
   </section>
 
   <section id="about" class="scroll-mt-24 py-10">
-    <div class="grid gap-4 md:grid-cols-2">
+    <div class="grid gap-4">
       <article id="expertise" class="rounded-2xl border border-slate/10 bg-haze/80 p-6">
         <h3 class="text-lg font-semibold text-ink">Expertise</h3>
-        <p class="mt-2 text-sm text-slate">
+        <div class="mt-4 flex flex-wrap gap-3">
+          {expertiseCloud.map((skill) => (
+            <span
+              class={`rounded-full border border-slate/30 px-3 py-1 font-semibold text-ink/90 ${skill.className}`}
+            >
+              {skill.label}
+            </span>
+          ))}
+        </div>
+        <p class="mt-4 text-sm text-slate">
           Focused on platform engineering, DevSecOps, and data platforms that support
           secure delivery and measurable outcomes.
         </p>
         <p class="mt-3 text-sm text-slate">
           Applied teaching bridges systems practice with learner readiness.
         </p>
-      </article>
-
-      <article id="credibility" class="rounded-2xl border border-slate/10 bg-haze/80 p-6">
-        <h3 class="text-lg font-semibold text-ink">Scholarship</h3>
-        <p class="mt-2 text-sm text-slate">
-          Doctoral research explores technology management and the human systems that
-          enable secure, resilient platforms.
-        </p>
-        <a class="mt-4 inline-flex text-sm font-semibold text-marigold" href="/publications">
-          See publications
-        </a>
       </article>
     </div>
   </section>
